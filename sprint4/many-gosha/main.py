@@ -4,79 +4,55 @@ import sys;
 
 ################################################################################
 
-def HornerHash(s, base, mod):
+def CalculatePrefixHashes(s, a, mod):
   ln = len(s);
+  ph = [0] * (ln + 1);
 
-  if (ln == 1):
-    return (ord(s) % mod);
+  for i in range(1, ln + 1):
+    ph[i] = (ph[i - 1] * a + ord(s[i - 1])) % mod;
 
-  res = ord(s[0]);
-
-  for i in range(1, ln):
-    res = ( ord(s[i]) + res * base ) % mod;
-
-  return res;
-
-################################################################################
-
-def PrintUsage(obj):
-  kb = sys.getsizeof(obj) // 1024;
-  mb = kb // 1024;
-
-  print(f"{ type(obj) } size is { kb } KB, { mb } MB");
-
-################################################################################
-
-def PrintUsageBig(lst):
-  totalBytes = 0;
-
-  for item in lst:
-    totalBytes += sys.getsizeof(item);
-
-  totalBytes += sys.getsizeof(lst);
-
-  kb = totalBytes // 1024;
-
-  print(f"big ass size = { kb } KB");
+  return ph;
 
 ################################################################################
 
 def main():
-  prime = 1000003;
-
-  base  = 100003;
-  mod   = prime;
-
-  maxSize = prime;
+  base  = 345;
+  mod   = 5608713984039443;
 
   spl = input().rstrip().split();
   n = int(spl[0]);
   k = int(spl[1]);
   s = sys.stdin.readline().rstrip();
 
-  d = [ None ] * (maxSize + 1);
+  ph = CalculatePrefixHashes(s, base, mod);
 
   ln = len(s);
 
+  power = pow(base, n, mod);
+
+  ans = {};
+
   for i in range(ln - n + 1):
-    ss = s[ i:(i + n) ];
-    h = HornerHash(ss, base, mod);
-    #print(f"  '{ ss }' = { h }");
-    if d[h] == None:
-      d[h] = [ i, 1 ];
+    l = i;
+    r = l + n;
+
+    hl = ph[l];
+    hr = ph[r];
+
+    h = ((hr + mod) - (hl * power)) % mod;
+
+    if h in ans:
+      ans[h][1] += 1;
     else:
-      d[h][1] += 1;
+      ans[h] = [ l, 1 ];
 
-  ans = [];
+  out = [];
 
-  for item in d:
-    if item != None:
-      if item[1] >= k:
-        ans.append(item[0]);
+  for key,value in ans.items():
+    if (value[1] >= k):
+      out.append(value[0]);
 
-  print(*ans);
-
-  #PrintUsageBig(d);
+  print(*out);
 
 ################################################################################
 
