@@ -1,0 +1,340 @@
+
+[<'tufhdbi' 76 58>, <'rqyoazgbmv' 59 78>, <'qvgtrlkmyrm' 35 27>, <'tgcytmfpj' 70 27>, <'xvf' 84 19>, <'jzpnpgpcqbsmczrgvsu' 30 3>, <'evjphqnevjqakze' 92 15>, <'wwzwv' 87 8>, <'tfpiqpwmkkduhcupp' 1 82>, <'tzamkyqadmybky' 5 81>, <'amotrxgba' 0 6>, <'easfsifbzkfezn' 100 28>, <'kivdiy' 70 47>]
+QuickSort(): s = 0, l = 0, r = 12, e = 13, m = 6
+<'tufhdbi' 76 58> ... <'kivdiy' 70 47>
+pivot =  <'evjphqnevjqakze' 92 15>
+  left = 0 right = 12
+    ar[left] (<'tufhdbi' 76 58>) >= pivot (<'evjphqnevjqakze' 92 15>)
+    ar[right] (<'kivdiy' 70 47>) > pivot (<'evjphqnevjqakze' 92 15>)
+  after pointers left = 0, right = 11
+  left = 0 right = 11
+    ar[left] (<'tufhdbi' 76 58>) >= pivot (<'evjphqnevjqakze' 92 15>)
+    ar[right] (<'easfsifbzkfezn' 100 28>) <= pivot (<'evjphqnevjqakze' 92 15>)
+    swap: <'tufhdbi' 76 58> <=> <'easfsifbzkfezn' 100 28>
+    now: [<'easfsifbzkfezn' 100 28>, <'rqyoazgbmv' 59 78>, <'qvgtrlkmyrm' 35 27>, <'tgcytmfpj' 70 27>, <'xvf' 84 19>, <'jzpnpgpcqbsmczrgvsu' 30 3>, <'evjphqnevjqakze' 92 15>, <'wwzwv' 87 8>, <'tfpiqpwmkkduhcupp' 1 82>, <'tzamkyqadmybky' 5 81>, <'amotrxgba' 0 6>, <'tufhdbi' 76 58>, <'kivdiy' 70 47>]
+  after pointers left = 1, right = 10
+  left = 1 right = 10
+    ar[left] (<'rqyoazgbmv' 59 78>) >= pivot (<'evjphqnevjqakze' 92 15>)
+    ar[right] (<'amotrxgba' 0 6>) > pivot (<'evjphqnevjqakze' 92 15>)
+  after pointers left = 1, right = 9
+  left = 1 right = 9
+    ar[left] (<'rqyoazgbmv' 59 78>) >= pivot (<'evjphqnevjqakze' 92 15>)
+    ar[right] (<'tzamkyqadmybky' 5 81>) > pivot (<'evjphqnevjqakze' 92 15>)
+  after pointers left = 1, right = 8
+  left = 1 right = 8
+    ar[left] (<'rqyoazgbmv' 59 78>) >= pivot (<'evjphqnevjqakze' 92 15>)
+    ar[right] (<'tfpiqpwmkkduhcupp' 1 82>) > pivot (<'evjphqnevjqakze' 92 15>)
+  after pointers left = 1, right = 7
+  left = 1 right = 7
+    ar[left] (<'rqyoazgbmv' 59 78>) >= pivot (<'evjphqnevjqakze' 92 15>)
+    ar[right] (<'wwzwv' 87 8>) > pivot (<'evjphqnevjqakze' 92 15>)
+  after pointers left = 1, right = 6
+  left = 1 right = 6
+    ar[left] (<'rqyoazgbmv' 59 78>) >= pivot (<'evjphqnevjqakze' 92 15>)
+    ar[right] (<'evjphqnevjqakze' 92 15>) <= pivot (<'evjphqnevjqakze' 92 15>)
+    swap: <'rqyoazgbmv' 59 78> <=> <'evjphqnevjqakze' 92 15>
+    now: [<'easfsifbzkfezn' 100 28>, <'evjphqnevjqakze' 92 15>, <'qvgtrlkmyrm' 35 27>, <'tgcytmfpj' 70 27>, <'xvf' 84 19>, <'jzpnpgpcqbsmczrgvsu' 30 3>, <'rqyoazgbmv' 59 78>, <'wwzwv' 87 8>, <'tfpiqpwmkkduhcupp' 1 82>, <'tzamkyqadmybky' 5 81>, <'amotrxgba' 0 6>, <'tufhdbi' 76 58>, <'kivdiy' 70 47>]
+  after pointers left = 2, right = 5
+  left = 2 right = 5
+    ar[left] (<'qvgtrlkmyrm' 35 27>) >= pivot (<'evjphqnevjqakze' 92 15>)
+    ar[right] (<'jzpnpgpcqbsmczrgvsu' 30 3>) > pivot (<'evjphqnevjqakze' 92 15>)
+  after pointers left = 2, right = 4
+  left = 2 right = 4
+    ar[left] (<'qvgtrlkmyrm' 35 27>) >= pivot (<'evjphqnevjqakze' 92 15>)
+    ar[right] (<'xvf' 84 19>) > pivot (<'evjphqnevjqakze' 92 15>)
+  after pointers left = 2, right = 3
+  left = 2 right = 3
+    ar[left] (<'qvgtrlkmyrm' 35 27>) >= pivot (<'evjphqnevjqakze' 92 15>)
+    ar[right] (<'tgcytmfpj' 70 27>) > pivot (<'evjphqnevjqakze' 92 15>)
+  after pointers left = 2, right = 2
+s = 0 l = 2 r = 2, e = 13
+
+[<'easfsifbzkfezn' 100 28>, <'evjphqnevjqakze' 92 15>, <'qvgtrlkmyrm' 35 27>, <'tgcytmfpj' 70 27>, <'xvf' 84 19>, <'jzpnpgpcqbsmczrgvsu' 30 3>, <'rqyoazgbmv' 59 78>, <'wwzwv' 87 8>, <'tfpiqpwmkkduhcupp' 1 82>, <'tzamkyqadmybky' 5 81>, <'amotrxgba' 0 6>, <'tufhdbi' 76 58>, <'kivdiy' 70 47>]
+QuickSort(): s = 0, l = 0, r = 1, e = 2, m = 1
+<'easfsifbzkfezn' 100 28> ... <'evjphqnevjqakze' 92 15>
+pivot =  <'evjphqnevjqakze' 92 15>
+  left = 0 right = 1
+    ar[left] (<'easfsifbzkfezn' 100 28>) < pivot (<'evjphqnevjqakze' 92 15>)
+    ar[right] (<'evjphqnevjqakze' 92 15>) <= pivot (<'evjphqnevjqakze' 92 15>)
+  after pointers left = 1, right = 1
+s = 0 l = 1 r = 1, e = 2
+
+[<'easfsifbzkfezn' 100 28>, <'evjphqnevjqakze' 92 15>, <'qvgtrlkmyrm' 35 27>, <'tgcytmfpj' 70 27>, <'xvf' 84 19>, <'jzpnpgpcqbsmczrgvsu' 30 3>, <'rqyoazgbmv' 59 78>, <'wwzwv' 87 8>, <'tfpiqpwmkkduhcupp' 1 82>, <'tzamkyqadmybky' 5 81>, <'amotrxgba' 0 6>, <'tufhdbi' 76 58>, <'kivdiy' 70 47>]
+QuickSort(): s = 0, l = 0, r = 0, e = 1, m = 0
+<'easfsifbzkfezn' 100 28> ... <'easfsifbzkfezn' 100 28>
+
+[<'easfsifbzkfezn' 100 28>, <'evjphqnevjqakze' 92 15>, <'qvgtrlkmyrm' 35 27>, <'tgcytmfpj' 70 27>, <'xvf' 84 19>, <'jzpnpgpcqbsmczrgvsu' 30 3>, <'rqyoazgbmv' 59 78>, <'wwzwv' 87 8>, <'tfpiqpwmkkduhcupp' 1 82>, <'tzamkyqadmybky' 5 81>, <'amotrxgba' 0 6>, <'tufhdbi' 76 58>, <'kivdiy' 70 47>]
+QuickSort(): s = 1, l = 1, r = 1, e = 2, m = 1
+<'evjphqnevjqakze' 92 15> ... <'evjphqnevjqakze' 92 15>
+
+[<'easfsifbzkfezn' 100 28>, <'evjphqnevjqakze' 92 15>, <'qvgtrlkmyrm' 35 27>, <'tgcytmfpj' 70 27>, <'xvf' 84 19>, <'jzpnpgpcqbsmczrgvsu' 30 3>, <'rqyoazgbmv' 59 78>, <'wwzwv' 87 8>, <'tfpiqpwmkkduhcupp' 1 82>, <'tzamkyqadmybky' 5 81>, <'amotrxgba' 0 6>, <'tufhdbi' 76 58>, <'kivdiy' 70 47>]
+QuickSort(): s = 2, l = 2, r = 12, e = 13, m = 7
+<'qvgtrlkmyrm' 35 27> ... <'kivdiy' 70 47>
+pivot =  <'wwzwv' 87 8>
+  left = 2 right = 12
+    ar[left] (<'qvgtrlkmyrm' 35 27>) >= pivot (<'wwzwv' 87 8>)
+    ar[right] (<'kivdiy' 70 47>) > pivot (<'wwzwv' 87 8>)
+  after pointers left = 2, right = 11
+  left = 2 right = 11
+    ar[left] (<'qvgtrlkmyrm' 35 27>) >= pivot (<'wwzwv' 87 8>)
+    ar[right] (<'tufhdbi' 76 58>) > pivot (<'wwzwv' 87 8>)
+  after pointers left = 2, right = 10
+  left = 2 right = 10
+    ar[left] (<'qvgtrlkmyrm' 35 27>) >= pivot (<'wwzwv' 87 8>)
+    ar[right] (<'amotrxgba' 0 6>) > pivot (<'wwzwv' 87 8>)
+  after pointers left = 2, right = 9
+  left = 2 right = 9
+    ar[left] (<'qvgtrlkmyrm' 35 27>) >= pivot (<'wwzwv' 87 8>)
+    ar[right] (<'tzamkyqadmybky' 5 81>) > pivot (<'wwzwv' 87 8>)
+  after pointers left = 2, right = 8
+  left = 2 right = 8
+    ar[left] (<'qvgtrlkmyrm' 35 27>) >= pivot (<'wwzwv' 87 8>)
+    ar[right] (<'tfpiqpwmkkduhcupp' 1 82>) > pivot (<'wwzwv' 87 8>)
+  after pointers left = 2, right = 7
+  left = 2 right = 7
+    ar[left] (<'qvgtrlkmyrm' 35 27>) >= pivot (<'wwzwv' 87 8>)
+    ar[right] (<'wwzwv' 87 8>) <= pivot (<'wwzwv' 87 8>)
+    swap: <'qvgtrlkmyrm' 35 27> <=> <'wwzwv' 87 8>
+    now: [<'easfsifbzkfezn' 100 28>, <'evjphqnevjqakze' 92 15>, <'wwzwv' 87 8>, <'tgcytmfpj' 70 27>, <'xvf' 84 19>, <'jzpnpgpcqbsmczrgvsu' 30 3>, <'rqyoazgbmv' 59 78>, <'qvgtrlkmyrm' 35 27>, <'tfpiqpwmkkduhcupp' 1 82>, <'tzamkyqadmybky' 5 81>, <'amotrxgba' 0 6>, <'tufhdbi' 76 58>, <'kivdiy' 70 47>]
+  after pointers left = 3, right = 6
+  left = 3 right = 6
+    ar[left] (<'tgcytmfpj' 70 27>) >= pivot (<'wwzwv' 87 8>)
+    ar[right] (<'rqyoazgbmv' 59 78>) > pivot (<'wwzwv' 87 8>)
+  after pointers left = 3, right = 5
+  left = 3 right = 5
+    ar[left] (<'tgcytmfpj' 70 27>) >= pivot (<'wwzwv' 87 8>)
+    ar[right] (<'jzpnpgpcqbsmczrgvsu' 30 3>) > pivot (<'wwzwv' 87 8>)
+  after pointers left = 3, right = 4
+  left = 3 right = 4
+    ar[left] (<'tgcytmfpj' 70 27>) >= pivot (<'wwzwv' 87 8>)
+    ar[right] (<'xvf' 84 19>) > pivot (<'wwzwv' 87 8>)
+  after pointers left = 3, right = 3
+s = 2 l = 3 r = 3, e = 13
+
+[<'easfsifbzkfezn' 100 28>, <'evjphqnevjqakze' 92 15>, <'wwzwv' 87 8>, <'tgcytmfpj' 70 27>, <'xvf' 84 19>, <'jzpnpgpcqbsmczrgvsu' 30 3>, <'rqyoazgbmv' 59 78>, <'qvgtrlkmyrm' 35 27>, <'tfpiqpwmkkduhcupp' 1 82>, <'tzamkyqadmybky' 5 81>, <'amotrxgba' 0 6>, <'tufhdbi' 76 58>, <'kivdiy' 70 47>]
+QuickSort(): s = 2, l = 2, r = 2, e = 3, m = 2
+<'wwzwv' 87 8> ... <'wwzwv' 87 8>
+
+[<'easfsifbzkfezn' 100 28>, <'evjphqnevjqakze' 92 15>, <'wwzwv' 87 8>, <'tgcytmfpj' 70 27>, <'xvf' 84 19>, <'jzpnpgpcqbsmczrgvsu' 30 3>, <'rqyoazgbmv' 59 78>, <'qvgtrlkmyrm' 35 27>, <'tfpiqpwmkkduhcupp' 1 82>, <'tzamkyqadmybky' 5 81>, <'amotrxgba' 0 6>, <'tufhdbi' 76 58>, <'kivdiy' 70 47>]
+QuickSort(): s = 3, l = 3, r = 12, e = 13, m = 8
+<'tgcytmfpj' 70 27> ... <'kivdiy' 70 47>
+pivot =  <'tfpiqpwmkkduhcupp' 1 82>
+  left = 3 right = 12
+    ar[left] (<'tgcytmfpj' 70 27>) < pivot (<'tfpiqpwmkkduhcupp' 1 82>)
+    ar[right] (<'kivdiy' 70 47>) <= pivot (<'tfpiqpwmkkduhcupp' 1 82>)
+  after pointers left = 4, right = 12
+  left = 4 right = 12
+    ar[left] (<'xvf' 84 19>) < pivot (<'tfpiqpwmkkduhcupp' 1 82>)
+    ar[right] (<'kivdiy' 70 47>) <= pivot (<'tfpiqpwmkkduhcupp' 1 82>)
+  after pointers left = 5, right = 12
+  left = 5 right = 12
+    ar[left] (<'jzpnpgpcqbsmczrgvsu' 30 3>) < pivot (<'tfpiqpwmkkduhcupp' 1 82>)
+    ar[right] (<'kivdiy' 70 47>) <= pivot (<'tfpiqpwmkkduhcupp' 1 82>)
+  after pointers left = 6, right = 12
+  left = 6 right = 12
+    ar[left] (<'rqyoazgbmv' 59 78>) < pivot (<'tfpiqpwmkkduhcupp' 1 82>)
+    ar[right] (<'kivdiy' 70 47>) <= pivot (<'tfpiqpwmkkduhcupp' 1 82>)
+  after pointers left = 7, right = 12
+  left = 7 right = 12
+    ar[left] (<'qvgtrlkmyrm' 35 27>) < pivot (<'tfpiqpwmkkduhcupp' 1 82>)
+    ar[right] (<'kivdiy' 70 47>) <= pivot (<'tfpiqpwmkkduhcupp' 1 82>)
+  after pointers left = 8, right = 12
+  left = 8 right = 12
+    ar[left] (<'tfpiqpwmkkduhcupp' 1 82>) >= pivot (<'tfpiqpwmkkduhcupp' 1 82>)
+    ar[right] (<'kivdiy' 70 47>) <= pivot (<'tfpiqpwmkkduhcupp' 1 82>)
+    swap: <'tfpiqpwmkkduhcupp' 1 82> <=> <'kivdiy' 70 47>
+    now: [<'easfsifbzkfezn' 100 28>, <'evjphqnevjqakze' 92 15>, <'wwzwv' 87 8>, <'tgcytmfpj' 70 27>, <'xvf' 84 19>, <'jzpnpgpcqbsmczrgvsu' 30 3>, <'rqyoazgbmv' 59 78>, <'qvgtrlkmyrm' 35 27>, <'kivdiy' 70 47>, <'tzamkyqadmybky' 5 81>, <'amotrxgba' 0 6>, <'tufhdbi' 76 58>, <'tfpiqpwmkkduhcupp' 1 82>]
+  after pointers left = 9, right = 11
+  left = 9 right = 11
+    ar[left] (<'tzamkyqadmybky' 5 81>) < pivot (<'tfpiqpwmkkduhcupp' 1 82>)
+    ar[right] (<'tufhdbi' 76 58>) <= pivot (<'tfpiqpwmkkduhcupp' 1 82>)
+  after pointers left = 10, right = 11
+  left = 10 right = 11
+    ar[left] (<'amotrxgba' 0 6>) >= pivot (<'tfpiqpwmkkduhcupp' 1 82>)
+    ar[right] (<'tufhdbi' 76 58>) <= pivot (<'tfpiqpwmkkduhcupp' 1 82>)
+    swap: <'amotrxgba' 0 6> <=> <'tufhdbi' 76 58>
+    now: [<'easfsifbzkfezn' 100 28>, <'evjphqnevjqakze' 92 15>, <'wwzwv' 87 8>, <'tgcytmfpj' 70 27>, <'xvf' 84 19>, <'jzpnpgpcqbsmczrgvsu' 30 3>, <'rqyoazgbmv' 59 78>, <'qvgtrlkmyrm' 35 27>, <'kivdiy' 70 47>, <'tzamkyqadmybky' 5 81>, <'tufhdbi' 76 58>, <'amotrxgba' 0 6>, <'tfpiqpwmkkduhcupp' 1 82>]
+  after pointers left = 11, right = 10
+s = 3 l = 11 r = 10, e = 13
+
+[<'easfsifbzkfezn' 100 28>, <'evjphqnevjqakze' 92 15>, <'wwzwv' 87 8>, <'tgcytmfpj' 70 27>, <'xvf' 84 19>, <'jzpnpgpcqbsmczrgvsu' 30 3>, <'rqyoazgbmv' 59 78>, <'qvgtrlkmyrm' 35 27>, <'kivdiy' 70 47>, <'tzamkyqadmybky' 5 81>, <'tufhdbi' 76 58>, <'amotrxgba' 0 6>, <'tfpiqpwmkkduhcupp' 1 82>]
+QuickSort(): s = 3, l = 3, r = 10, e = 11, m = 7
+<'tgcytmfpj' 70 27> ... <'tufhdbi' 76 58>
+pivot =  <'qvgtrlkmyrm' 35 27>
+  left = 3 right = 10
+    ar[left] (<'tgcytmfpj' 70 27>) < pivot (<'qvgtrlkmyrm' 35 27>)
+    ar[right] (<'tufhdbi' 76 58>) <= pivot (<'qvgtrlkmyrm' 35 27>)
+  after pointers left = 4, right = 10
+  left = 4 right = 10
+    ar[left] (<'xvf' 84 19>) < pivot (<'qvgtrlkmyrm' 35 27>)
+    ar[right] (<'tufhdbi' 76 58>) <= pivot (<'qvgtrlkmyrm' 35 27>)
+  after pointers left = 5, right = 10
+  left = 5 right = 10
+    ar[left] (<'jzpnpgpcqbsmczrgvsu' 30 3>) >= pivot (<'qvgtrlkmyrm' 35 27>)
+    ar[right] (<'tufhdbi' 76 58>) <= pivot (<'qvgtrlkmyrm' 35 27>)
+    swap: <'jzpnpgpcqbsmczrgvsu' 30 3> <=> <'tufhdbi' 76 58>
+    now: [<'easfsifbzkfezn' 100 28>, <'evjphqnevjqakze' 92 15>, <'wwzwv' 87 8>, <'tgcytmfpj' 70 27>, <'xvf' 84 19>, <'tufhdbi' 76 58>, <'rqyoazgbmv' 59 78>, <'qvgtrlkmyrm' 35 27>, <'kivdiy' 70 47>, <'tzamkyqadmybky' 5 81>, <'jzpnpgpcqbsmczrgvsu' 30 3>, <'amotrxgba' 0 6>, <'tfpiqpwmkkduhcupp' 1 82>]
+  after pointers left = 6, right = 9
+  left = 6 right = 9
+    ar[left] (<'rqyoazgbmv' 59 78>) < pivot (<'qvgtrlkmyrm' 35 27>)
+    ar[right] (<'tzamkyqadmybky' 5 81>) > pivot (<'qvgtrlkmyrm' 35 27>)
+  after pointers left = 7, right = 8
+  left = 7 right = 8
+    ar[left] (<'qvgtrlkmyrm' 35 27>) >= pivot (<'qvgtrlkmyrm' 35 27>)
+    ar[right] (<'kivdiy' 70 47>) <= pivot (<'qvgtrlkmyrm' 35 27>)
+    swap: <'qvgtrlkmyrm' 35 27> <=> <'kivdiy' 70 47>
+    now: [<'easfsifbzkfezn' 100 28>, <'evjphqnevjqakze' 92 15>, <'wwzwv' 87 8>, <'tgcytmfpj' 70 27>, <'xvf' 84 19>, <'tufhdbi' 76 58>, <'rqyoazgbmv' 59 78>, <'kivdiy' 70 47>, <'qvgtrlkmyrm' 35 27>, <'tzamkyqadmybky' 5 81>, <'jzpnpgpcqbsmczrgvsu' 30 3>, <'amotrxgba' 0 6>, <'tfpiqpwmkkduhcupp' 1 82>]
+  after pointers left = 8, right = 7
+s = 3 l = 8 r = 7, e = 11
+
+[<'easfsifbzkfezn' 100 28>, <'evjphqnevjqakze' 92 15>, <'wwzwv' 87 8>, <'tgcytmfpj' 70 27>, <'xvf' 84 19>, <'tufhdbi' 76 58>, <'rqyoazgbmv' 59 78>, <'kivdiy' 70 47>, <'qvgtrlkmyrm' 35 27>, <'tzamkyqadmybky' 5 81>, <'jzpnpgpcqbsmczrgvsu' 30 3>, <'amotrxgba' 0 6>, <'tfpiqpwmkkduhcupp' 1 82>]
+QuickSort(): s = 3, l = 3, r = 7, e = 8, m = 5
+<'tgcytmfpj' 70 27> ... <'kivdiy' 70 47>
+pivot =  <'tufhdbi' 76 58>
+  left = 3 right = 7
+    ar[left] (<'tgcytmfpj' 70 27>) >= pivot (<'tufhdbi' 76 58>)
+    ar[right] (<'kivdiy' 70 47>) > pivot (<'tufhdbi' 76 58>)
+  after pointers left = 3, right = 6
+  left = 3 right = 6
+    ar[left] (<'tgcytmfpj' 70 27>) >= pivot (<'tufhdbi' 76 58>)
+    ar[right] (<'rqyoazgbmv' 59 78>) > pivot (<'tufhdbi' 76 58>)
+  after pointers left = 3, right = 5
+  left = 3 right = 5
+    ar[left] (<'tgcytmfpj' 70 27>) >= pivot (<'tufhdbi' 76 58>)
+    ar[right] (<'tufhdbi' 76 58>) <= pivot (<'tufhdbi' 76 58>)
+    swap: <'tgcytmfpj' 70 27> <=> <'tufhdbi' 76 58>
+    now: [<'easfsifbzkfezn' 100 28>, <'evjphqnevjqakze' 92 15>, <'wwzwv' 87 8>, <'tufhdbi' 76 58>, <'xvf' 84 19>, <'tgcytmfpj' 70 27>, <'rqyoazgbmv' 59 78>, <'kivdiy' 70 47>, <'qvgtrlkmyrm' 35 27>, <'tzamkyqadmybky' 5 81>, <'jzpnpgpcqbsmczrgvsu' 30 3>, <'amotrxgba' 0 6>, <'tfpiqpwmkkduhcupp' 1 82>]
+  after pointers left = 4, right = 4
+s = 3 l = 4 r = 4, e = 8
+
+[<'easfsifbzkfezn' 100 28>, <'evjphqnevjqakze' 92 15>, <'wwzwv' 87 8>, <'tufhdbi' 76 58>, <'xvf' 84 19>, <'tgcytmfpj' 70 27>, <'rqyoazgbmv' 59 78>, <'kivdiy' 70 47>, <'qvgtrlkmyrm' 35 27>, <'tzamkyqadmybky' 5 81>, <'jzpnpgpcqbsmczrgvsu' 30 3>, <'amotrxgba' 0 6>, <'tfpiqpwmkkduhcupp' 1 82>]
+QuickSort(): s = 3, l = 3, r = 3, e = 4, m = 3
+<'tufhdbi' 76 58> ... <'tufhdbi' 76 58>
+
+[<'easfsifbzkfezn' 100 28>, <'evjphqnevjqakze' 92 15>, <'wwzwv' 87 8>, <'tufhdbi' 76 58>, <'xvf' 84 19>, <'tgcytmfpj' 70 27>, <'rqyoazgbmv' 59 78>, <'kivdiy' 70 47>, <'qvgtrlkmyrm' 35 27>, <'tzamkyqadmybky' 5 81>, <'jzpnpgpcqbsmczrgvsu' 30 3>, <'amotrxgba' 0 6>, <'tfpiqpwmkkduhcupp' 1 82>]
+QuickSort(): s = 4, l = 4, r = 7, e = 8, m = 6
+<'xvf' 84 19> ... <'kivdiy' 70 47>
+pivot =  <'rqyoazgbmv' 59 78>
+  left = 4 right = 7
+    ar[left] (<'xvf' 84 19>) < pivot (<'rqyoazgbmv' 59 78>)
+    ar[right] (<'kivdiy' 70 47>) <= pivot (<'rqyoazgbmv' 59 78>)
+  after pointers left = 5, right = 7
+  left = 5 right = 7
+    ar[left] (<'tgcytmfpj' 70 27>) < pivot (<'rqyoazgbmv' 59 78>)
+    ar[right] (<'kivdiy' 70 47>) <= pivot (<'rqyoazgbmv' 59 78>)
+  after pointers left = 6, right = 7
+  left = 6 right = 7
+    ar[left] (<'rqyoazgbmv' 59 78>) >= pivot (<'rqyoazgbmv' 59 78>)
+    ar[right] (<'kivdiy' 70 47>) <= pivot (<'rqyoazgbmv' 59 78>)
+    swap: <'rqyoazgbmv' 59 78> <=> <'kivdiy' 70 47>
+    now: [<'easfsifbzkfezn' 100 28>, <'evjphqnevjqakze' 92 15>, <'wwzwv' 87 8>, <'tufhdbi' 76 58>, <'xvf' 84 19>, <'tgcytmfpj' 70 27>, <'kivdiy' 70 47>, <'rqyoazgbmv' 59 78>, <'qvgtrlkmyrm' 35 27>, <'tzamkyqadmybky' 5 81>, <'jzpnpgpcqbsmczrgvsu' 30 3>, <'amotrxgba' 0 6>, <'tfpiqpwmkkduhcupp' 1 82>]
+  after pointers left = 7, right = 6
+s = 4 l = 7 r = 6, e = 8
+
+[<'easfsifbzkfezn' 100 28>, <'evjphqnevjqakze' 92 15>, <'wwzwv' 87 8>, <'tufhdbi' 76 58>, <'xvf' 84 19>, <'tgcytmfpj' 70 27>, <'kivdiy' 70 47>, <'rqyoazgbmv' 59 78>, <'qvgtrlkmyrm' 35 27>, <'tzamkyqadmybky' 5 81>, <'jzpnpgpcqbsmczrgvsu' 30 3>, <'amotrxgba' 0 6>, <'tfpiqpwmkkduhcupp' 1 82>]
+QuickSort(): s = 4, l = 4, r = 6, e = 7, m = 5
+<'xvf' 84 19> ... <'kivdiy' 70 47>
+pivot =  <'tgcytmfpj' 70 27>
+  left = 4 right = 6
+    ar[left] (<'xvf' 84 19>) < pivot (<'tgcytmfpj' 70 27>)
+    ar[right] (<'kivdiy' 70 47>) > pivot (<'tgcytmfpj' 70 27>)
+  after pointers left = 5, right = 5
+s = 4 l = 5 r = 5, e = 7
+
+[<'easfsifbzkfezn' 100 28>, <'evjphqnevjqakze' 92 15>, <'wwzwv' 87 8>, <'tufhdbi' 76 58>, <'xvf' 84 19>, <'tgcytmfpj' 70 27>, <'kivdiy' 70 47>, <'rqyoazgbmv' 59 78>, <'qvgtrlkmyrm' 35 27>, <'tzamkyqadmybky' 5 81>, <'jzpnpgpcqbsmczrgvsu' 30 3>, <'amotrxgba' 0 6>, <'tfpiqpwmkkduhcupp' 1 82>]
+QuickSort(): s = 4, l = 4, r = 4, e = 5, m = 4
+<'xvf' 84 19> ... <'xvf' 84 19>
+
+[<'easfsifbzkfezn' 100 28>, <'evjphqnevjqakze' 92 15>, <'wwzwv' 87 8>, <'tufhdbi' 76 58>, <'xvf' 84 19>, <'tgcytmfpj' 70 27>, <'kivdiy' 70 47>, <'rqyoazgbmv' 59 78>, <'qvgtrlkmyrm' 35 27>, <'tzamkyqadmybky' 5 81>, <'jzpnpgpcqbsmczrgvsu' 30 3>, <'amotrxgba' 0 6>, <'tfpiqpwmkkduhcupp' 1 82>]
+QuickSort(): s = 5, l = 5, r = 6, e = 7, m = 6
+<'tgcytmfpj' 70 27> ... <'kivdiy' 70 47>
+pivot =  <'kivdiy' 70 47>
+  left = 5 right = 6
+    ar[left] (<'tgcytmfpj' 70 27>) < pivot (<'kivdiy' 70 47>)
+    ar[right] (<'kivdiy' 70 47>) <= pivot (<'kivdiy' 70 47>)
+  after pointers left = 6, right = 6
+s = 5 l = 6 r = 6, e = 7
+
+[<'easfsifbzkfezn' 100 28>, <'evjphqnevjqakze' 92 15>, <'wwzwv' 87 8>, <'tufhdbi' 76 58>, <'xvf' 84 19>, <'tgcytmfpj' 70 27>, <'kivdiy' 70 47>, <'rqyoazgbmv' 59 78>, <'qvgtrlkmyrm' 35 27>, <'tzamkyqadmybky' 5 81>, <'jzpnpgpcqbsmczrgvsu' 30 3>, <'amotrxgba' 0 6>, <'tfpiqpwmkkduhcupp' 1 82>]
+QuickSort(): s = 5, l = 5, r = 5, e = 6, m = 5
+<'tgcytmfpj' 70 27> ... <'tgcytmfpj' 70 27>
+
+[<'easfsifbzkfezn' 100 28>, <'evjphqnevjqakze' 92 15>, <'wwzwv' 87 8>, <'tufhdbi' 76 58>, <'xvf' 84 19>, <'tgcytmfpj' 70 27>, <'kivdiy' 70 47>, <'rqyoazgbmv' 59 78>, <'qvgtrlkmyrm' 35 27>, <'tzamkyqadmybky' 5 81>, <'jzpnpgpcqbsmczrgvsu' 30 3>, <'amotrxgba' 0 6>, <'tfpiqpwmkkduhcupp' 1 82>]
+QuickSort(): s = 6, l = 6, r = 6, e = 7, m = 6
+<'kivdiy' 70 47> ... <'kivdiy' 70 47>
+
+[<'easfsifbzkfezn' 100 28>, <'evjphqnevjqakze' 92 15>, <'wwzwv' 87 8>, <'tufhdbi' 76 58>, <'xvf' 84 19>, <'tgcytmfpj' 70 27>, <'kivdiy' 70 47>, <'rqyoazgbmv' 59 78>, <'qvgtrlkmyrm' 35 27>, <'tzamkyqadmybky' 5 81>, <'jzpnpgpcqbsmczrgvsu' 30 3>, <'amotrxgba' 0 6>, <'tfpiqpwmkkduhcupp' 1 82>]
+QuickSort(): s = 7, l = 7, r = 7, e = 8, m = 7
+<'rqyoazgbmv' 59 78> ... <'rqyoazgbmv' 59 78>
+
+[<'easfsifbzkfezn' 100 28>, <'evjphqnevjqakze' 92 15>, <'wwzwv' 87 8>, <'tufhdbi' 76 58>, <'xvf' 84 19>, <'tgcytmfpj' 70 27>, <'kivdiy' 70 47>, <'rqyoazgbmv' 59 78>, <'qvgtrlkmyrm' 35 27>, <'tzamkyqadmybky' 5 81>, <'jzpnpgpcqbsmczrgvsu' 30 3>, <'amotrxgba' 0 6>, <'tfpiqpwmkkduhcupp' 1 82>]
+QuickSort(): s = 8, l = 8, r = 10, e = 11, m = 9
+<'qvgtrlkmyrm' 35 27> ... <'jzpnpgpcqbsmczrgvsu' 30 3>
+pivot =  <'tzamkyqadmybky' 5 81>
+  left = 8 right = 10
+    ar[left] (<'qvgtrlkmyrm' 35 27>) < pivot (<'tzamkyqadmybky' 5 81>)
+    ar[right] (<'jzpnpgpcqbsmczrgvsu' 30 3>) <= pivot (<'tzamkyqadmybky' 5 81>)
+  after pointers left = 9, right = 10
+  left = 9 right = 10
+    ar[left] (<'tzamkyqadmybky' 5 81>) >= pivot (<'tzamkyqadmybky' 5 81>)
+    ar[right] (<'jzpnpgpcqbsmczrgvsu' 30 3>) <= pivot (<'tzamkyqadmybky' 5 81>)
+    swap: <'tzamkyqadmybky' 5 81> <=> <'jzpnpgpcqbsmczrgvsu' 30 3>
+    now: [<'easfsifbzkfezn' 100 28>, <'evjphqnevjqakze' 92 15>, <'wwzwv' 87 8>, <'tufhdbi' 76 58>, <'xvf' 84 19>, <'tgcytmfpj' 70 27>, <'kivdiy' 70 47>, <'rqyoazgbmv' 59 78>, <'qvgtrlkmyrm' 35 27>, <'jzpnpgpcqbsmczrgvsu' 30 3>, <'tzamkyqadmybky' 5 81>, <'amotrxgba' 0 6>, <'tfpiqpwmkkduhcupp' 1 82>]
+  after pointers left = 10, right = 9
+s = 8 l = 10 r = 9, e = 11
+
+[<'easfsifbzkfezn' 100 28>, <'evjphqnevjqakze' 92 15>, <'wwzwv' 87 8>, <'tufhdbi' 76 58>, <'xvf' 84 19>, <'tgcytmfpj' 70 27>, <'kivdiy' 70 47>, <'rqyoazgbmv' 59 78>, <'qvgtrlkmyrm' 35 27>, <'jzpnpgpcqbsmczrgvsu' 30 3>, <'tzamkyqadmybky' 5 81>, <'amotrxgba' 0 6>, <'tfpiqpwmkkduhcupp' 1 82>]
+QuickSort(): s = 8, l = 8, r = 9, e = 10, m = 9
+<'qvgtrlkmyrm' 35 27> ... <'jzpnpgpcqbsmczrgvsu' 30 3>
+pivot =  <'jzpnpgpcqbsmczrgvsu' 30 3>
+  left = 8 right = 9
+    ar[left] (<'qvgtrlkmyrm' 35 27>) < pivot (<'jzpnpgpcqbsmczrgvsu' 30 3>)
+    ar[right] (<'jzpnpgpcqbsmczrgvsu' 30 3>) <= pivot (<'jzpnpgpcqbsmczrgvsu' 30 3>)
+  after pointers left = 9, right = 9
+s = 8 l = 9 r = 9, e = 10
+
+[<'easfsifbzkfezn' 100 28>, <'evjphqnevjqakze' 92 15>, <'wwzwv' 87 8>, <'tufhdbi' 76 58>, <'xvf' 84 19>, <'tgcytmfpj' 70 27>, <'kivdiy' 70 47>, <'rqyoazgbmv' 59 78>, <'qvgtrlkmyrm' 35 27>, <'jzpnpgpcqbsmczrgvsu' 30 3>, <'tzamkyqadmybky' 5 81>, <'amotrxgba' 0 6>, <'tfpiqpwmkkduhcupp' 1 82>]
+QuickSort(): s = 8, l = 8, r = 8, e = 9, m = 8
+<'qvgtrlkmyrm' 35 27> ... <'qvgtrlkmyrm' 35 27>
+
+[<'easfsifbzkfezn' 100 28>, <'evjphqnevjqakze' 92 15>, <'wwzwv' 87 8>, <'tufhdbi' 76 58>, <'xvf' 84 19>, <'tgcytmfpj' 70 27>, <'kivdiy' 70 47>, <'rqyoazgbmv' 59 78>, <'qvgtrlkmyrm' 35 27>, <'jzpnpgpcqbsmczrgvsu' 30 3>, <'tzamkyqadmybky' 5 81>, <'amotrxgba' 0 6>, <'tfpiqpwmkkduhcupp' 1 82>]
+QuickSort(): s = 9, l = 9, r = 9, e = 10, m = 9
+<'jzpnpgpcqbsmczrgvsu' 30 3> ... <'jzpnpgpcqbsmczrgvsu' 30 3>
+
+[<'easfsifbzkfezn' 100 28>, <'evjphqnevjqakze' 92 15>, <'wwzwv' 87 8>, <'tufhdbi' 76 58>, <'xvf' 84 19>, <'tgcytmfpj' 70 27>, <'kivdiy' 70 47>, <'rqyoazgbmv' 59 78>, <'qvgtrlkmyrm' 35 27>, <'jzpnpgpcqbsmczrgvsu' 30 3>, <'tzamkyqadmybky' 5 81>, <'amotrxgba' 0 6>, <'tfpiqpwmkkduhcupp' 1 82>]
+QuickSort(): s = 10, l = 10, r = 10, e = 11, m = 10
+<'tzamkyqadmybky' 5 81> ... <'tzamkyqadmybky' 5 81>
+
+[<'easfsifbzkfezn' 100 28>, <'evjphqnevjqakze' 92 15>, <'wwzwv' 87 8>, <'tufhdbi' 76 58>, <'xvf' 84 19>, <'tgcytmfpj' 70 27>, <'kivdiy' 70 47>, <'rqyoazgbmv' 59 78>, <'qvgtrlkmyrm' 35 27>, <'jzpnpgpcqbsmczrgvsu' 30 3>, <'tzamkyqadmybky' 5 81>, <'amotrxgba' 0 6>, <'tfpiqpwmkkduhcupp' 1 82>]
+QuickSort(): s = 11, l = 11, r = 12, e = 13, m = 12
+<'amotrxgba' 0 6> ... <'tfpiqpwmkkduhcupp' 1 82>
+pivot =  <'tfpiqpwmkkduhcupp' 1 82>
+  left = 11 right = 12
+    ar[left] (<'amotrxgba' 0 6>) >= pivot (<'tfpiqpwmkkduhcupp' 1 82>)
+    ar[right] (<'tfpiqpwmkkduhcupp' 1 82>) <= pivot (<'tfpiqpwmkkduhcupp' 1 82>)
+    swap: <'amotrxgba' 0 6> <=> <'tfpiqpwmkkduhcupp' 1 82>
+    now: [<'easfsifbzkfezn' 100 28>, <'evjphqnevjqakze' 92 15>, <'wwzwv' 87 8>, <'tufhdbi' 76 58>, <'xvf' 84 19>, <'tgcytmfpj' 70 27>, <'kivdiy' 70 47>, <'rqyoazgbmv' 59 78>, <'qvgtrlkmyrm' 35 27>, <'jzpnpgpcqbsmczrgvsu' 30 3>, <'tzamkyqadmybky' 5 81>, <'tfpiqpwmkkduhcupp' 1 82>, <'amotrxgba' 0 6>]
+  after pointers left = 12, right = 11
+s = 11 l = 12 r = 11, e = 13
+
+[<'easfsifbzkfezn' 100 28>, <'evjphqnevjqakze' 92 15>, <'wwzwv' 87 8>, <'tufhdbi' 76 58>, <'xvf' 84 19>, <'tgcytmfpj' 70 27>, <'kivdiy' 70 47>, <'rqyoazgbmv' 59 78>, <'qvgtrlkmyrm' 35 27>, <'jzpnpgpcqbsmczrgvsu' 30 3>, <'tzamkyqadmybky' 5 81>, <'tfpiqpwmkkduhcupp' 1 82>, <'amotrxgba' 0 6>]
+QuickSort(): s = 11, l = 11, r = 11, e = 12, m = 11
+<'tfpiqpwmkkduhcupp' 1 82> ... <'tfpiqpwmkkduhcupp' 1 82>
+
+[<'easfsifbzkfezn' 100 28>, <'evjphqnevjqakze' 92 15>, <'wwzwv' 87 8>, <'tufhdbi' 76 58>, <'xvf' 84 19>, <'tgcytmfpj' 70 27>, <'kivdiy' 70 47>, <'rqyoazgbmv' 59 78>, <'qvgtrlkmyrm' 35 27>, <'jzpnpgpcqbsmczrgvsu' 30 3>, <'tzamkyqadmybky' 5 81>, <'tfpiqpwmkkduhcupp' 1 82>, <'amotrxgba' 0 6>]
+QuickSort(): s = 12, l = 12, r = 12, e = 13, m = 12
+<'amotrxgba' 0 6> ... <'amotrxgba' 0 6>
+
+<'easfsifbzkfezn' 100 28>
+<'evjphqnevjqakze' 92 15>
+<'wwzwv' 87 8>
+<'tufhdbi' 76 58>
+<'xvf' 84 19>
+<'tgcytmfpj' 70 27>
+<'kivdiy' 70 47>
+<'rqyoazgbmv' 59 78>
+<'qvgtrlkmyrm' 35 27>
+<'jzpnpgpcqbsmczrgvsu' 30 3>
+<'tzamkyqadmybky' 5 81>
+<'tfpiqpwmkkduhcupp' 1 82>
+<'amotrxgba' 0 6>
