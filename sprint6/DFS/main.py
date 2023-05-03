@@ -2,76 +2,7 @@
 
 ################################################################################
 
-def PrintArray(ar):
-  ln = len(ar);
-  out = "";
-  for x in range(1, ln):
-    for y in range(1, ln):
-      out += f"{ ar[x][y] } ";
-    out += "\n";
-  print(out);
-
-################################################################################
-
-def MatrixSolution():
-  line = input().rstrip().split();
-  vertices = int(line[0]);
-  edges    = int(line[1]);
-
-  mtx = [ [0 for x in range(vertices + 1)] for y in range(vertices + 1) ];
-
-  colors = [0] * (vertices + 1);
-
-  for i in range(edges):
-    line = input().rstrip().split();
-    from_ = int(line[0]);
-    to    = int(line[1]);
-
-    mtx[from_][to] = 1;
-    mtx[to][from_] = 1;
-
-  #PrintArray(mtx);
-
-  start = int(input().rstrip());
-
-  toProcess = [ start ];
-
-  ans = [ start ];
-
-  while len(toProcess) != 0:
-    #print("toProcess = ", toProcess);
-
-    v = toProcess.pop();
-    #print("got ", v);
-
-    if colors[v] == 0:
-      colors[v] = 1;
-
-    if (colors[v] != 2):
-      #print("  adding ", v);
-      toProcess.append(v);
-
-    found = False;
-
-    for i in range(1, vertices + 1):
-      newVert = mtx[v][i];
-      #print(f"  processing [{ v }][{ i }]");
-      if (newVert == 1) and (colors[i] == 0):
-        toProcess.append(i);
-        found = True;
-        #print("  adding ", i);
-        ans.append(i);
-        break;
-
-    if not found:
-      #print("  no vertices for ", v);
-      colors[v] = 2;
-
-  print(*ans);
-
-################################################################################
-
-def BullshitSolution():
+def main():
   line = input().rstrip().split();
   vertices = int(line[0]);
   edges    = int(line[1]);
@@ -99,46 +30,32 @@ def BullshitSolution():
 
   for item in graph:
     if item != None:
-      item.sort();
+      item.sort(reverse=True);
 
   #print(graph, start);
 
   toProcess = [ start ];
 
-  ans = [ start ];
+  ans = [];
 
   while len(toProcess) != 0:
+    #print("toProcess: ", toProcess);
+
     v = toProcess.pop();
 
     #print("got ", v);
 
     if colors[v] == 0:
+      ans.append(v);
       colors[v] = 1;
-
-    if colors[v] != 2:
-      toProcess.append(v);
-
-    found = False;
 
     if graph[v] != None:
       for item in graph[v]:
         if colors[item] == 0:
-          found = True;
-          #print("  found ", item);
-          ans.append(item);
+          #print("  adding", item);
           toProcess.append(item);
-          break;
-
-    if not found:
-      colors[v] = 2;
 
   print(*ans);
-
-################################################################################
-
-def main():
-  #MatrixSolution();
-  BullshitSolution();
 
 ################################################################################
 

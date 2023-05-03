@@ -2,39 +2,18 @@
 
 ################################################################################
 
-Counter = 0;
-Entry = [];
-Leave = [];
-
-def DFS(v, graph, colors):
-  global Counter;
-  global Entry;
-  global Leave;
-
-  Counter += 1;
-  Entry[v] = Counter;
-
+def TopSort(v, colors, graph, order):
   colors[v] = 1;
-
   if graph[v] != None:
-    for item in graph[v]:
-      if colors[item] == 0:
-        DFS(item, graph, colors);
-
-  Counter += 1;
-  Leave[v] = Counter;
+    for vert in graph[v]:
+      if colors[vert] == 0:
+        TopSort(vert, colors, graph, order);
   colors[v] = 2;
-
-  #print("  entry:", Entry);
-  #print("  leave:", Leave);
+  order.append(v);
 
 ################################################################################
 
 def main():
-  global Entry;
-  global Leave;
-  global Counter;
-
   line = input().rstrip().split();
   vertices = int(line[0]);
   edges    = int(line[1]);
@@ -42,8 +21,6 @@ def main():
   graph = [ None ] * (vertices + 1);
 
   colors = [0] * (vertices + 1);
-  Entry = [0] * (vertices + 1);
-  Leave = [0] * (vertices + 1);
 
   for i in range(edges):
     line = input().rstrip().split();
@@ -59,12 +36,15 @@ def main():
     if item != None:
       item.sort();
 
-  #print(graph);
+  print(graph);
 
-  DFS(1, graph, colors);
+  order = [];
 
   for i in range(1, vertices + 1):
-    print(Entry[i] - 1, Leave[i] - 1);
+    if colors[i] == 0:
+      TopSort(i, colors, graph, order);
+
+  print(*order);
 
 ################################################################################
 
