@@ -1,30 +1,34 @@
 #!/usr/bin/python3
 
-ComponentCount = 1;
-
 ################################################################################
 
-def DFS(start, colors, graph, color):
-  global ComponentCount;
+ZoneCounter = 1;
 
-  #print("processing", start);
+def DFS(start, graph, zones, colors):
+  global ZoneCounter;
 
-  colors[start] = 1;
+  toProcess = [ start ];
 
-  if graph[start] != None:
-    for item in graph[start]:
-      if colors[item] == 0:
-        DFS(item, colors, graph, color);
+  while len(toProcess) != 0:
+    v = toProcess.pop();
 
-  #print("  finished processing", start);
+    if colors[v] == 0:
+      colors[v] = 1;
+      toProcess.append(v);
 
-  colors[start] = ComponentCount;
-  color[start]  = ComponentCount;
+      if graph[v] != None:
+        for item in graph[v]:
+          if colors[item] == 0:
+            toProcess.append(item);
+
+    elif colors[v] == 1:
+      colors[v] = 2;
+      zones[v] = ZoneCounter;
 
 ################################################################################
 
 def main():
-  global ComponentCount;
+  global ZoneCounter;
 
   line = input().rstrip().split();
   vertices = int(line[0]);
@@ -32,7 +36,7 @@ def main():
 
   graph = [ None ] * (vertices + 1);
 
-  color  = [ -1 ] * (vertices + 1);
+  zones  = [ -1 ] * (vertices + 1);
   colors = [0] * (vertices + 1);
 
   for i in range(edges):
@@ -51,26 +55,21 @@ def main():
       graph[t].append(f);
 
   for i in range(1, vertices + 1):
-    if color[i] == -1:
-      DFS(i, colors, graph, color);
-      #print("DFS finished");
-      #print("  color:", color);
-      ComponentCount += 1;
+    if zones[i] == -1:
+      DFS(i, graph, zones, colors);
+      ZoneCounter += 1;
 
-  #print(color);
+  print(ZoneCounter - 1);
 
-  print(ComponentCount - 1);
+  for z in range(1, ZoneCounter + 1):
+    ans = [];
 
-  ans = [];
-
-  for i in range(1, ComponentCount + 1):
-    for j in range(1, vertices + 1):
-      if color[j] == i:
-        ans.append(j);
+    for i in range(1, vertices + 1):
+      if zones[i] == z:
+        ans.append(i);
 
     if len(ans) != 0:
       print(*ans);
-      ans = [];
 
 ################################################################################
 

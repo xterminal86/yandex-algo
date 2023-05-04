@@ -1,15 +1,30 @@
 #!/usr/bin/python3
 
+from collections import deque;
+
 ################################################################################
 
-def TopSort(v, colors, graph, order):
+def BFS(v, graph, colors):
+  toProcess = deque();
+
+  toProcess.append(v);
+
   colors[v] = 1;
-  if graph[v] != None:
-    for vert in graph[v]:
-      if colors[vert] == 0:
-        TopSort(vert, colors, graph, order);
-  colors[v] = 2;
-  order.append(v);
+
+  ans = [];
+
+  while len(toProcess) != 0:
+    nv = toProcess.popleft();
+
+    if graph[nv] != None:
+      for item in graph[nv]:
+        if colors[item] == 0:
+          colors[item] = 1;
+          toProcess.append(item);
+      colors[nv] = 2;
+      ans.append(nv);
+
+  print(*ans);
 
 ################################################################################
 
@@ -32,22 +47,24 @@ def main():
     else:
       graph[f].append(t);
 
+    if graph[t] == None:
+      graph[t] = [ f ];
+    else:
+      graph[t].append(f);
+
   for item in graph:
     if item != None:
       item.sort();
 
-  order = [];
+  start = int(input().rstrip());
 
-  for i in range(1, vertices + 1):
-    if colors[i] == 0:
-      TopSort(i, colors, graph, order);
+  #print(graph);
+  #print(start);
 
-  ans = [];
-
-  while len(order) != 0:
-    ans.append(order.pop());
-
-  print(*ans);
+  if edges == 0:
+    print(1);
+  else:
+    BFS(start, graph, colors);
 
 ################################################################################
 
