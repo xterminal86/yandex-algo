@@ -1,26 +1,6 @@
 #!/usr/bin/python3
 
-import sys;
-
-###############################################################################
-
-Ans = 0;
-
-def Traverse(graph, ind, end):
-  global Ans;
-
-  for v in graph[ind]:
-    if v == end:
-      Ans += 1;
-      return;
-    Traverse(graph, v, end);
-
-###############################################################################
-
 def main():
-  sys.setrecursionlimit(10**6);
-
-  global Ans;
 
   line = input().rstrip().split();
   n = int(line[0]);
@@ -28,25 +8,19 @@ def main():
 
   mod = pow(10, 9) + 7;
 
-  graph = [ None ] * (n + 1);
+  stairs = [ 0 ] * (n + 1);
 
-  for i in range(1, n):
-    for j in range(k):
-      v = (i + 1) + j;
+  stairs[0] = 1;
+  stairs[1] = 1;
+  stairs[2] = 1 if k == 1 else 2;
 
-      if v > n:
-        break;
+  for i in range(3, n):
+    sum = 0;
+    for j in range(1, k + 1):
+      sum += stairs[i - j];
+    stairs[i] = (sum % mod);
 
-      if graph[i] == None:
-        graph[i] = [ v ];
-      else:
-        graph[i].append(v);
-
-  #print(graph);
-
-  Traverse(graph, 1, n);
-
-  print(Ans % mod);
+  print(stairs[n - 1]);
 
 ###############################################################################
 
