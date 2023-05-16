@@ -9,9 +9,13 @@ def main():
 
   scores = list( map(int, sys.stdin.readline().rstrip().split()) );
 
-  list.sort(scores);
-
   total = sum(scores);
+
+  if total % 2 != 0:
+    print("False");
+    return;
+
+  list.sort(scores);
 
   limit = total // 2;
 
