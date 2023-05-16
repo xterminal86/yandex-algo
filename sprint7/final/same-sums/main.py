@@ -15,8 +15,6 @@ def main():
     print("False");
     return;
 
-  list.sort(scores);
-
   limit = total // 2;
 
   dp = [ False ] * (limit + 1);
