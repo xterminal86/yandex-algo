@@ -1,131 +1,81 @@
 #!/usr/bin/python3
 
-from enum import Enum;
+# contest id = 87791585
+
+#
+# Временная сложность - O(n^2), в случае если подана куча длинных одинаковых
+#                       строк без "упаковки", в среднем по палате - O(n + p),
+#                       где p - длина общего префикса.
+# Пространственная    - O(k), где k - кол-во рекурсивных вызовов, равное кол-ву
+#                       "закодированных" строк, содержащихся во входной строке.
+#
 
 ################################################################################
 
-class State(Enum):
-  OFF      = 0
-  WORKING  = 1
-  FINISHED = 2
+Indent = -2;
 
-################################################################################
+def UnpackString(ps, ind, ans, debug=False):
+  if debug:
+    global Indent;
+    Indent += 2;
+    spaces = "." * Indent;
+    print(f"{ spaces }in = { ps }, ind = { ind }");
+  ln = len(ps);
+  tmp = [];
+  while ind < ln:
+    ch = ps[ind];
+    if str.isdigit(ch):
+      if debug:
+        print(f"{ spaces }found repeat { ch } at position { ind }");
+      toRepeat = int(ch);
+      ind += 2;
+      (unpacked, end) = UnpackString(ps, ind, tmp, debug);
+      tmp += (toRepeat * unpacked);
+      ind = end;
+      if debug:
+        print(f"{ spaces }so far: { tmp }, i = { ind }");
+    elif ch == ']':
+      if debug:
+        print(f"{ spaces }ret ({ tmp }, { ind + 1 })");
+      Indent += -2;
+      return (tmp, ind + 1);
+    else:
+      tmp += ch;
+      ind += 1;
 
-class Machine:
-  _packedString : str = "";
-
-  _repeaters = set(
-    ("1", "2", "3", "4", "5", "6", "7", "8", "9")
-  );
-
-  _state : State = State.OFF;
-
-  # ----------------------------------------------------------------------------
-
-  def Start(self, packedString):
-    self._packedString = packedString;
-    self._state = State.WORKING;
-
-  # ----------------------------------------------------------------------------
-
-  def Drive(self):
-    if (self._state == State.OFF) or (self._state == State.FINISHED):
-      return;
-
-    stillPacked = True;
-
-    codeFound = False;
-    nextScanStart = 0;
-
-    while stillPacked:
-      stillPacked = False;
-
-      ln = len(self._packedString);
-
-      repeatCount = 0;
-
-      intl = "";
-
-      for i in range(nextScanStart, ln):
-        ch = self._packedString[i];
-
-        if ch == '[':
-          continue;
-
-        if ch in self._repeaters:
-          stillPacked = True;
-          repeatCount = int(ch);
-          intl = "";
-          codeFound = True;
-          continue;
-
-        if ch == ']':
-          self._packedString = self._packedString.replace(
-            f"{ repeatCount }[{ intl }]", intl * repeatCount
-          );
-          break;
-        else:
-          intl += ch;
-
-          if codeFound == False:
-            nextScanStart = i;
-
-    self._state = State.FINISHED;
-
-  # ----------------------------------------------------------------------------
-
-  def GetResult(self) -> str:
-    if (self._state != State.FINISHED):
-      return "";
-
-    return self._packedString;
-
-  # ----------------------------------------------------------------------------
-
-  def __repr__(self) -> str:
-    s = (
-      f"<class 'Machine', "
-      f"id = { hex( id(self) ).upper().replace('X', 'x') } "
-      f"_packedString = '{ self._packedString }' "
-      f"_state = { self._state }>"
-    );
-
-    return s;
+  ans += tmp;
 
 ################################################################################
 
 def main():
   n = int(input().rstrip());
 
-  m = Machine();
-
-  strs = [ "" ] * n;
+  unpackedStrings = [ "" ] * n;
 
   upTo = 10**6;
 
   for i in range(n):
-    packedString = input().rstrip();
-    m.Start(packedString);
-    m.Drive();
-    strs[i] = m.GetResult();
-    ln = len(strs[i]);
-    if ln < upTo:
-      upTo = ln;
+    ans = [];
+    s = input().rstrip();
+    packed = list(s);
+    UnpackString(packed, 0, ans);
+    us = "".join(ans);
+
+    if len(us) < upTo:
+      upTo = len(us);
+
+    unpackedStrings[i] = us;
 
   prefix = "";
 
   for i in range(upTo):
-    ok = True;
-    toCheck = strs[0][i];
+    letter = unpackedStrings[0][i];
     for j in range(1, n):
-      if strs[j][i] != toCheck:
-        ok = False;
-        break;
+      if letter != unpackedStrings[j][i]:
+        print(prefix);
+        return;
 
-    if ok:
-      prefix += strs[0][i];
-    else:
-      break;
+    prefix += letter;
 
   print(prefix);
 
