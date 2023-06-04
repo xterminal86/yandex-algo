@@ -85,36 +85,39 @@ class Trie:
 ################################################################################
 
 def main():
-  s = input().rstrip();
-
+  s = list( input().rstrip() );
+  
   n = int(input().rstrip());
 
   words = [ "" ] * n;
-
-  for i in range(n):
-    words[i] = input().rstrip();
-
-  words.sort(key=lambda x : -len(x));
-
-  for word in words:
-    s = re.sub(word, "", s);
-
-  if len(s) == 0:
-    print("YES");
-  else:
-    print("NO");
-
-  '''
+  
   t = Trie();
 
   for i in range(n):
     words[i] = input().rstrip();
     t.Add(words[i]);
 
-  t.Print();
-  '''
-
-
+  #t.Print();
+  
+  dp = [ False ] * (len(s) + 1);
+  
+  dp[len(s)] = True;
+  
+  for i in range(len(s) - 1, -1, -1):
+    for word in words:      
+      if ( (i + len(word)) <= len(s) ):
+        w = s[i : i + len(word)];
+        if t.Find("".join(w)):
+          dp[i] = dp[i + len(word)];
+          
+      if dp[i] == True:
+        break;
+      
+  if dp[0] == True:
+    print("YES");
+  else:
+    print("NO");
+  
 ################################################################################
 
 if __name__ == "__main__":
