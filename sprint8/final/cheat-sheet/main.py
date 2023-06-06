@@ -1,6 +1,12 @@
 #!/usr/bin/python3
 
-import re;
+# constest id = 88002018
+
+# Временная сложность - O(n + k), где n - длина строки, k - время поиска по бору.
+# Пространственная - O(n + s), где n - кол-во элементов в боре,
+#                    s - длина массива DP, равная длине исходной строки + 1.
+
+import sys;
 
 ################################################################################
 
@@ -17,7 +23,10 @@ class Trie:
 
       head = head[char];
 
-    return True;
+    if 0 in head:
+      return True;
+
+    return False;
 
   # ----------------------------------------------------------------------------
 
@@ -31,6 +40,24 @@ class Trie:
         head[ch] = {};
 
       head = head[ch];
+
+    head.update({ 0 : 0 });
+
+  # ----------------------------------------------------------------------------
+
+  _traverseHead = None;
+
+  def Reset(self):
+    self._traverseHead = self._root;
+
+  # ----------------------------------------------------------------------------
+
+  def Traverse(self, ch):
+    if ch not in self._traverseHead:
+      return False;
+    else:
+      self._traverseHead = self._traverseHead[ch];
+      return True;
 
   # ----------------------------------------------------------------------------
 
@@ -59,11 +86,12 @@ class Trie:
   def PrintIntl(self, start, indent):
     cur = start;
     spaces = "." * indent;
-    for k,v in cur.items():
-      print(f"{ spaces }{ k }");
-      self.PrintIntl(cur[k], indent + 2);
-      if len(cur[k]) == 0:
-        print("-"*80);
+    if (type(cur) is dict):
+      for k,v in cur.items():
+        print(f"{ spaces }{ k }");
+        self.PrintIntl(cur[k], indent + 2);
+        if type(v) is int:
+          print("-"*80);
 
   # ----------------------------------------------------------------------------
 
@@ -84,13 +112,20 @@ class Trie:
 
 ################################################################################
 
+def PrintDP(dp):
+  for item in dp:
+    print(1 if (item == True) else 0, end="");
+  print("");
+
+################################################################################
+
 def main():
   s = list( input().rstrip() );
-  
+
   n = int(input().rstrip());
 
   words = [ "" ] * n;
-  
+
   t = Trie();
 
   for i in range(n):
@@ -98,26 +133,29 @@ def main():
     t.Add(words[i]);
 
   #t.Print();
-  
+
   dp = [ False ] * (len(s) + 1);
-  
+
   dp[len(s)] = True;
-  
+
   for i in range(len(s) - 1, -1, -1):
-    for word in words:      
-      if ( (i + len(word)) <= len(s) ):
-        w = s[i : i + len(word)];
-        if t.Find("".join(w)):
-          dp[i] = dp[i + len(word)];
-          
-      if dp[i] == True:
+    t.Reset();
+    for j in range(i, len(s)):
+      res = t.Traverse(s[j]);
+
+      if res == False:
         break;
-      
+
+      if (0 in t._traverseHead) and (dp[j + 1] == True):
+        dp[i] = True;
+
+    #PrintDP(dp);
+
   if dp[0] == True:
     print("YES");
   else:
     print("NO");
-  
+
 ################################################################################
 
 if __name__ == "__main__":
