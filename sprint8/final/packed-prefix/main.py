@@ -9,7 +9,6 @@
 # Пространственная    - O(k), где k - кол-во рекурсивных вызовов, равное кол-ву
 #                       "закодированных" строк, содержащихся во входной строке.
 #
-
 ################################################################################
 
 Indent = -2;
@@ -50,9 +49,10 @@ def UnpackString(ps, ind, ans, debug=False):
 def main():
   n = int(input().rstrip());
 
-  unpackedStrings = [ "" ] * n;
-
   upTo = 10**6;
+
+  maxStr = "";
+  minStr = "z" * upTo;
 
   for i in range(n):
     ans = [];
@@ -61,23 +61,21 @@ def main():
     UnpackString(packed, 0, ans);
     us = "".join(ans);
 
-    if len(us) < upTo:
-      upTo = len(us);
+    if us < minStr:
+      minStr = us;
 
-    unpackedStrings[i] = us;
+    if us > maxStr:
+      maxStr = us;
 
-  prefix = "";
+  upTo = min( len(minStr), len(maxStr) );
 
   for i in range(upTo):
-    letter = unpackedStrings[0][i];
-    for j in range(1, n):
-      if letter != unpackedStrings[j][i]:
-        print(prefix);
-        return;
+    if minStr[i] != maxStr[i]:
+      break;
+    else:
+      print(minStr[i], end="");
 
-    prefix += letter;
-
-  print(prefix);
+  print("");
 
 ################################################################################
 
