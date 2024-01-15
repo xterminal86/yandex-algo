@@ -1,5 +1,15 @@
 #!/usr/bin/python3
 
+# Формат ввода
+# Функция принимает голову списка и индекс элемента, который надо удалить
+# (нумерация с нуля). Список содержит не более 5000 элементов. Список не бывает
+# пустым.
+#
+# Инструкцию по работе с Make вы можете найти в конце этого урока
+# Формат вывода
+# Верните голову списка, в котором удален нужный элемент.
+#
+
 # ! change LOCAL to False before submitting !
 # set LOCAL to True for local testing
 
@@ -11,13 +21,17 @@ if LOCAL:
       self.value     = value;  
       self.next_item = next_item;
 
+################################################################################
+
 def PrintList(node):
   head = node;
 
   while head != None:
     print(head.value);
     head = head.next_item;
-    
+
+################################################################################
+
 def solution(node, idx):
   ptr  = node;
   prev = None;
@@ -40,6 +54,8 @@ def solution(node, idx):
 
   return node;
 
+################################################################################
+
 def test():
   node3 = Node("node3", None)
   node2 = Node("node2", node3)
@@ -57,6 +73,8 @@ def test():
   # result is node0 -> node2 -> node3
   '''
   
+################################################################################
+
 if __name__ == "__main__":
   test();
   

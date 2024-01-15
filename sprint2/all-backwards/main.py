@@ -1,3 +1,14 @@
+#
+# Формат ввода
+# Функция принимает на вход единственный аргумент — голову двусвязного списка.
+# Длина списка не превосходит 1000 элементов. Список не бывает пустым.
+#
+# Инструкцию по работе с Make вы можете найти в конце этого урока
+#
+# Формат вывода
+# Функция должна вернуть голову развернутого списка.
+#
+
 # ! change LOCAL to False before submitting !
 # set LOCAL to True for local testing
 
@@ -9,6 +20,8 @@ if LOCAL:
             self.value = value  
             self.next = next  
             self.prev = prev
+
+################################################################################
 
 def PrintList(node):
   out = "";
@@ -40,7 +53,9 @@ def PrintList(node):
     head = head.next;
 
   print(out);
-  
+
+################################################################################
+
 def solution(node):
   res = [];
 
@@ -68,6 +83,8 @@ def solution(node):
   n.prev = last;
 
   return newHead;
+
+################################################################################
 
 def test():
     node3 = DoubleConnectedNode("node3")
@@ -101,6 +118,7 @@ def test():
     assert node1.prev is node2
     assert node0.prev is node1
     
+################################################################################
 
 if __name__ == '__main__':
     test()
